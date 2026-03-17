@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+<style>
+    body {
+        background-color: #001f3f;   /* Navy */
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1, h2, h3 {
+        color: #7FDBFF;  /* Light blue */
+    }
+
+    nav a {
+        color: #39CCCC;  /* Cyan */
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #FFD700;  /* Gold */
+    }
+
+    table {
+        background-color: #f0f0f0;  /* Light gray */
+        color: black;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    img {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Ben Tortola</h1>
+
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="gallery.html">Gallery</a> |
+    <a href="about.html">About</a>
+</nav>
+
+<p>Change Theme:</p>
+
+<button onclick="darkTheme()">Dark Theme</button>
+<button onclick="lightTheme()">Light Theme</button>
+<button onclick="blueTheme()">Blue Theme</button>
+
+<h2>Gallery</h2>
+
+<img src="images/image2.jpg" alt="Placeholder artwork 1" width="200" height="150">
+<p>Art made by me.</p>
+
+<img src="images/image3.jpg" alt="Placeholder artwork 2" width="200" height="150">
+<p>Art made by me.</p>
+
+<img src="images/image4.jpg" alt="Placeholder artwork 3" width="200" height="150">
+<p>Art made by me.</p>
+
+<h3>Video I made</h3>
+
+<video width="400" height="250" controls>
+    <source src="videos/Eye of Clthulhu Animation.mp4" type="video/mp4">
+</video>
+<p>Video I made for my grade 12 Design Final</p>
+
+<h3>YouTube Video</h3>
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/BVvR7Mfyya0?si=3G8sDbT2CT-FwNf-"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+<p>
+<a href="https://www.youtube.com/embed/BVvR7Mfyya0?si=3G8sDbT2CT-FwNf-" target="_blank" style="color: cyan;">
+Click here to watch the video on YouTube
+</a>
+</p>
+<p>Placeholder video, not created by me. (Original creator is Exoskellet)</p>
+<p>(If link says error just click on the error and it will bring you to the video on YouTube)</p>
+
+<script>
+// Apply saved theme when page loads
+window.onload = function() {
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+        darkTheme();
+    } else if (savedTheme === "light") {
+        lightTheme();
+    } else if (savedTheme === "blue") {
+        blueTheme();
+    }
+};
+
+function darkTheme() {
+    document.body.style.backgroundColor = "#001f3f";
+    document.body.style.color = "white";
+    localStorage.setItem("theme", "dark");
+}
+
+function lightTheme() {
+    document.body.style.backgroundColor = "#f0f0f0";
+    document.body.style.color = "black";
+    localStorage.setItem("theme", "light");
+}
+
+function blueTheme() {
+    document.body.style.backgroundColor = "#0074D9";
+    document.body.style.color = "white";
+    localStorage.setItem("theme", "blue");
+}
+</script>
+
+</body>
+</html>

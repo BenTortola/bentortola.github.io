@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Me</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+<style>
+    body {
+        background-color: #001f3f;   /* Navy */
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1, h2, h3 {
+        color: #7FDBFF;  /* Light blue */
+    }
+
+    nav a {
+        color: #39CCCC;  /* Cyan */
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #FFD700;  /* Gold */
+    }
+
+    table {
+        background-color: #f0f0f0;  /* Light gray */
+        color: black;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    img {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Ben Tortola</h1>
+
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="gallery.html">Gallery</a> |
+    <a href="about.html">About</a>
+</nav>
+
+<p>Change Theme:</p>
+
+<button onclick="darkTheme()">Dark Theme</button>
+<button onclick="lightTheme()">Light Theme</button>
+<button onclick="blueTheme()">Blue Theme</button>
+
+<p>
+My career goal is to become an animator specializing in traditional 2D animation while also developing skills in 3D animation. Although I currently have limited experience, I have learned foundational concepts through high school courses and online tutorials. My long-term goal is to refine my skills through practice and eventually work professionally in animation, particularly in the entertainment industry such as shows, films, and or gaming.
+The main reason I am drawn to animation is its power as a storytelling tool. Unlike books, which rely entirely on imagination, or live-action productions, which are limited by physical constraints, animation allows creators to build limitless worlds. Whether it is a fantasy setting, a sci-fi adventure with vibrant color palettes, or a reimagining of real-life perspectives, animation offers endless creative possibilities. I am also deeply interested in the visual aspect of animation. I have always enjoyed drawing and sketching in my spare time and learning how drawings can be brought to life through motion greatly inspired me.
+</p>
+
+<h2>My Goals</h2>
+<ol>
+    <li>Become better at drawing</li>
+    <li>Begin an animation project</li>
+    <li>Complete an animation project</li>
+</ol>
+
+<h2>Skills</h2>
+<ul>
+    <li>Drawing
+        <ul>
+            <li>Character design</li>
+            <li>Background art</li>
+        </ul>
+    </li>
+    <li>Basic animation principles</li>
+</ul>
+
+<h2>Projects</h2>
+<table border="1">
+    <tr>
+        <th>Project</th>
+        <th>Year</th>
+    </tr>
+    <tr>
+        <td>Project A</td>
+        <td>2026</td>
+    </tr>
+    <tr>
+        <td>Project B</td>
+        <td>2025</td>
+    </tr>
+</table>
+
+<p>Note: I am currently developing future projects.</p>
+
+<audio controls>
+    <source src="audio/intro.mp3" type="audio/mpeg">
+</audio>
+<p>Sound effect from video game I like</p>
+
+<script>
+// Apply saved theme when page loads
+window.onload = function() {
+    let savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+        darkTheme();
+    } else if (savedTheme === "light") {
+        lightTheme();
+    } else if (savedTheme === "blue") {
+        blueTheme();
+    }
+};
+
+function darkTheme() {
+    document.body.style.backgroundColor = "#001f3f";
+    document.body.style.color = "white";
+    localStorage.setItem("theme", "dark");
+}
+
+function lightTheme() {
+    document.body.style.backgroundColor = "#f0f0f0";
+    document.body.style.color = "black";
+    localStorage.setItem("theme", "light");
+}
+
+function blueTheme() {
+    document.body.style.backgroundColor = "#0074D9";
+    document.body.style.color = "white";
+    localStorage.setItem("theme", "blue");
+}
+</script>
+
+</body>
+</html>
