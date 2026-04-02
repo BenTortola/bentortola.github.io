@@ -9,6 +9,7 @@ Project Folder:
 - index.html
 - gallery.html
 - about.html
+- style.css
 - README.txt
 - A2_CodeReview.pdf
 - A2_Design.pdf
@@ -45,8 +46,11 @@ The website contains three pages:
 
 Each page contains a navigation menu linking to the other pages.
 
-The homepage also contains JavaScript features such as a welcome notification,
-a conditional prompt, a theme color changer, and an event handler.
+The homepage contains JavaScript features such as:
+- A welcome notification
+- A conditional prompt
+- A theme color changer
+- An event handler
 
 --------------------------------------------------
 3. Elements Included
@@ -68,10 +72,7 @@ Example:
 </video>
 
 Video (External – YouTube):
-Purpose: Provides an external video link.
-
-Example:
-<a href="https://www.youtube.com" target="_blank">Watch Video</a>
+Purpose: Provides an embedded external video.
 
 Audio:
 Purpose: Plays an audio file with controls.
@@ -83,7 +84,6 @@ Example:
 
 Navigation:
 Purpose: Allows users to move between pages.
-Implemented using anchor tags (<a>).
 
 Lists:
 - One unordered list
@@ -93,42 +93,111 @@ Lists:
 Table:
 Purpose: Displays structured information in rows and columns.
 
+Form:
+Purpose: Allows users to input their name and message using text input and textarea.
+
 --------------------------------------------------
 4. JavaScript Functions
 --------------------------------------------------
 
 Notification (alert):
-Displays a welcome message when the homepage loads.
+Displays a welcome message when the homepage loads (only once per session).
 
 Conditional (if / else):
 Prompts the user to answer if they like animation and displays a different
 message depending on their response.
 
 Color Theme Changer:
-Allows the user to switch between Dark Theme, Light Theme, and Blue Theme
-using buttons that modify the page colors with JavaScript.
+Allows the user to switch between Dark Theme, Light Theme, and Blue Theme.
+Themes persist across pages using localStorage.
 
 Event Handler:
 Clicking the homepage image triggers a JavaScript function that displays
 a message before navigating to the gallery page.
 
 --------------------------------------------------
-5. References
+5. CSS Styling (Assignment 3)
 --------------------------------------------------
 
-Exoskellet. 2023. Animation Video. YouTube.
-Available at: https://www.youtube.com
+The website uses an external stylesheet (style.css).
 
-15TOFU. 2023. Favicon Image. DeviantArt.
-Available at: https://www.deviantart.com
+The following elements are styled:
 
-VoidInferserka. 2023. Artwork Image. Pinterest.
-Available at: https://www.pinterest.com
+- Images (border, padding, margin)
+- Navigation links (color, hover effects)
+- Lists (spacing and formatting)
+- Table (borders, colors, layout)
+- Buttons (hover and transition effects)
+- Form inputs and textarea
+- General layout and spacing
 
-MyInstants. 2023. Sound Effect. MyInstants Soundboard.
-Available at: https://www.myinstants.com
 --------------------------------------------------
-6. Code Notes
+6. CSS Selectors Used
+--------------------------------------------------
+
+Universal selector:
+* { ... }
+
+Multiple selector:
+h1, h2, h3 { ... }
+
+Child selector:
+ul > li { ... }
+
+Sibling selector:
+h2 ~ p { ... }
+
+Adjacent sibling selector:
+h2 + ol { ... }
+
+Attribute selector:
+a[href] { ... }
+
+Pseudo-element selector:
+p::first-letter { ... }
+
+--------------------------------------------------
+7. Layout Features
+--------------------------------------------------
+
+Flexbox:
+Used on index.html in the hero section to align text and image side by side.
+
+Grid:
+Used on gallery.html to create a responsive photo gallery layout.
+
+--------------------------------------------------
+8. Responsive Design
+--------------------------------------------------
+
+Media queries were used to support:
+
+- Desktop layout (default)
+- Tablet layout (max-width: 900px)
+- Mobile layout (max-width: 600px)
+
+Adjustments include:
+- Gallery changing from 3 → 2 → 1 columns
+- Navigation stacking vertically on mobile
+- Buttons resizing and stacking
+- Images and videos resizing dynamically
+
+A viewport meta tag was added for proper scaling on mobile devices.
+
+--------------------------------------------------
+9. Accessibility
+--------------------------------------------------
+
+The website follows basic accessibility practices:
+
+- All images include alt text
+- Buttons are used for interactive elements
+- Clear color contrast for readability
+- Labels included for form inputs
+- Responsive design improves usability on all devices
+
+--------------------------------------------------
+10. Code Notes
 --------------------------------------------------
 
 Reused Code From Assignment 1:
@@ -140,20 +209,38 @@ were originally created in Assignment 1. These files include:
 - gallery.html
 - about.html
 
-Assignment 2 expands on this code by adding JavaScript functionality
-including:
+Assignment 2 and 3 expand on this code by adding:
 
-• A welcome notification
-• A conditional prompt using if/else
-• A color theme changer with three themes
-• An event handler triggered when the homepage image is clicked
+- JavaScript interactivity
+- CSS styling and layout
+- Responsive design features
+- Improved accessibility
 
-All original HTML code from Assignment 1 was reused and modified to
-support the new JavaScript features required for Assignment 2.
+--------------------------------------------------
+11. References (ACM Format)
+--------------------------------------------------
 
-Additional Documents:
+Exoskellet. 2023. Animation Video. YouTube. Available at: https://www.youtube.com
+
+15TOFU. 2023. Favicon Image. DeviantArt. Available at: https://www.deviantart.com
+
+VoidInferserka. 2023. Artwork Image. Pinterest. Available at: https://www.pinterest.com
+
+MyInstants. 2023. Sound Effect. MyInstants Soundboard. Available at: https://www.myinstants.com
+
+--------------------------------------------------
+12. Additional Documents
+--------------------------------------------------
 
 A2_CodeReview.pdf – explains two examples of HTML code improved using JavaScript.
 
-A2_Design.pdf – contains the desktop, tablet, and mobile wireframes for
-index.html and the website linking diagram.
+A2_Design.pdf – contains desktop, tablet, and mobile wireframes and the website linking diagram.
+
+--------------------------------------------------
+13. Bonus: Free Hosting
+--------------------------------------------------
+
+The website has been hosted online using GitHub Pages.
+
+Live website URL:
+https://bentortola.github.io
