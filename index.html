@@ -2,44 +2,9 @@
 <html>
 <head>
     <title>Home</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
-<style>
-    body {
-        background-color: #001f3f;   /* Navy */
-        color: white;
-        font-family: Arial, sans-serif;
-        margin: 20px;
-    }
-
-    h1, h2, h3 {
-        color: #7FDBFF;  /* Light blue */
-    }
-
-    nav a {
-        color: #39CCCC;  /* Cyan */
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    nav a:hover {
-        color: #FFD700;  /* Gold */
-    }
-
-    table {
-        background-color: #f0f0f0;  /* Light gray */
-        color: black;
-        border-collapse: collapse;
-    }
-
-    table, th, td {
-        border: 1px solid black;
-        padding: 8px;
-    }
-
-    img {
-        margin-bottom: 10px;
-    }
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -57,13 +22,19 @@
 <button onclick="lightTheme()">Light Theme</button>
 <button onclick="blueTheme()">Blue Theme</button>
 
-<p>Welcome to my animation website. Here you can explore my creative work and projects.</p>
+<!-- ✅ FLEXBOX HERO SECTION -->
+<section class="hero">
+    <div class="hero-text">
+        <p>Welcome to my animation website. Here you can explore my creative work and projects.</p>
+        <p>Artwork is not made by me, simply a placeholder until I present my own work.</p>
+    </div>
 
-<a href="gallery.html">
-    <img src="images/image1.jpg" alt="Animation artwork" width="400" height="250" onclick="imageMessage()">
-</a>
-
-<p>Artwork is not made by me, simply a placeholder until I present my own work.</p>
+    <div class="hero-image">
+        <a href="gallery.html">
+            <img src="images/image1.jpg" alt="Animation artwork" width="400" height="250" onclick="imageMessage()">
+        </a>
+    </div>
+</section>
 
 <p>
 Visit my favorite animation studio:
@@ -83,20 +54,24 @@ window.onload = function() {
         blueTheme();
     }
 
-    // Notification
-    alert("Welcome to my animation website!");
+    // ONLY RUN ONCE PER SESSION
+    if (!sessionStorage.getItem("visited")) {
 
-    // Conditional
-    let likesAnimation = prompt("Do you like animation? Type yes or no.");
+        alert("Welcome to my animation website!");
 
-    if (likesAnimation === "yes") {
-        alert("That’s great! Welcome to my animation website.");
-    } else {
-        alert("Thanks for visiting my website anyway!");
+        let likesAnimation = prompt("Do you like animation? Type yes or no.");
+
+        if (likesAnimation === "yes") {
+            alert("That’s great! Welcome to my animation website.");
+        } else {
+            alert("Thanks for visiting my website anyway!");
+        }
+
+        sessionStorage.setItem("visited", "true");
     }
 };
 
-// Color Themes
+// Color Themes (saved across pages)
 function darkTheme() {
     document.body.style.backgroundColor = "#001f3f";
     document.body.style.color = "white";
